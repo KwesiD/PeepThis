@@ -1,0 +1,3 @@
+To do list / planning: 
+
+Create simple display for time/date/etc, potentially using pygame
