@@ -1,3 +1,8 @@
 To do list / planning: 
 
 Create simple display for time/date/etc, potentially using pygame
+
+
+
+IP Address : https://ipinfo.io/  No library required
+Requests API: http://docs.python-requests.org/en/master/    pip install requests
