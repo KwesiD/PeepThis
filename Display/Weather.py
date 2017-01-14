@@ -1,7 +1,8 @@
 import requests
 from keys import weather_key
 import IP
-
+from urllib.request import urlopen
+import io
 
 
 #gets weather data
@@ -41,11 +42,20 @@ def getWeatherFromZip(location):
 	wind_speed = data["wind"]["speed"]
 	clouds = cloud_eval(data["clouds"]["all"])
 	humidity = humid_eval(data["main"]["humidity"])
+	icon = data["weather"][0]["icon"]
 	if rain in data:  #because it is not always snowing 
 		rain = data["rain"]["3h"]
 	if snow in data:
 		snow = data["snow"]["3h"]
-	return condition,(current,high,low),(rain,snow,clouds,humidity,wind_speed),status
+
+	##
+	url = "http://openweathermap.org/img/w/" + str(icon) + ".png"
+	print(url)
+	image = io.BytesIO(urlopen(url).read())
+	##
+
+	
+	return condition,(current,high,low),(rain,snow,clouds,humidity,wind_speed,image),status
 
 
 def cloud_eval(cloud):
