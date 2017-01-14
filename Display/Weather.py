@@ -48,9 +48,8 @@ def getWeatherFromZip(location):
 	if snow in data:
 		snow = data["snow"]["3h"]
 
-	##
+	## handle exceptions
 	url = "http://openweathermap.org/img/w/" + str(icon) + ".png"
-	print(url)
 	image = io.BytesIO(urlopen(url).read())
 	##
 
