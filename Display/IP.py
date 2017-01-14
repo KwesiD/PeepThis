@@ -1,6 +1,5 @@
 import requests
 
-
 #Gets IP address and location data
 def getLocation():
 	ip = postal = 0
