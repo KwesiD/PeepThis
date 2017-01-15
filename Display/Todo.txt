@@ -12,3 +12,4 @@ Some methods for pygame pulled from here : https://pythonprogramming.net/pygame-
 Screen res pulled from here : http://stackoverflow.com/questions/3597965/getting-monitor-resolution-in-python-on-ubuntu
 Ubuntu fonts: fonts.ubuntu.com
 Yelp api: https://github.com/Yelp/yelp-python   (you may need sudo) pip3 install yelp
+Recipies: https://market.mashape.com/spoonacular/recipe-food-nutrition#find-by-ingredients
