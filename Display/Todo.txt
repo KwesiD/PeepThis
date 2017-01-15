@@ -10,3 +10,4 @@ Weather API : http://openweathermap.org/ No Lib
 Pygame : pip3 install pygame  #you may need to use sudo pip3
 Some methods for pygame pulled from here : https://pythonprogramming.net/pygame-start-menu-tutorial/
 Screen res pulled from here : http://stackoverflow.com/questions/3597965/getting-monitor-resolution-in-python-on-ubuntu
+Ubuntu fonts: fonts.ubuntu.com

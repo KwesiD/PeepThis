@@ -17,7 +17,7 @@ def getWeatherFromZip(location):
 	status_code = 0
 
 	try:
-		request = requests.get("http://api.openweathermap.org/data/2.5/weather?zip=" + location[3] + "," 
+		request = requests.get("http://api.openweathermap.org/data/2.5/weather?zip=" + str(location[3]) + "," 
 		+ location[2] + "&units=imperial" + "&APPID=" + weather_key) #gets weather data
 	except requests.ConnectionError: ##in the event of lack of connection
 		status = "Connection Error in Weather API"
@@ -43,9 +43,9 @@ def getWeatherFromZip(location):
 	clouds = cloud_eval(data["clouds"]["all"])
 	humidity = humid_eval(data["main"]["humidity"])
 	icon = data["weather"][0]["icon"]
-	if rain in data:  #because it is not always snowing 
+	if "rain" in data:  #because it is not always snowing 
 		rain = data["rain"]["3h"]
-	if snow in data:
+	if "snow" in data:
 		snow = data["snow"]["3h"]
 
 	## handle exceptions
@@ -53,7 +53,6 @@ def getWeatherFromZip(location):
 	image = io.BytesIO(urlopen(url).read())
 	##
 
-	
 	return condition,(current,high,low),(rain,snow,clouds,humidity,wind_speed,image),status
 
 

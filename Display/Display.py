@@ -11,6 +11,7 @@ window = None
 window_width = 0
 window_height = 0
 last_time = 0
+objects = {} #this dictionary stores all the objects from all of the widgets and their positions
 
 def getWeather():
 	ip,location,status = IP.getLocation() #returns ip,(city,state,country,postal),status
@@ -18,13 +19,14 @@ def getWeather():
 		##Send error message, do whatever, Idk
 		print(status)
 		exit(0)
-	postal = location[3]
+	#postal = location[3]
 	 #returns  condition,(current,high,low),(rain,snow,clouds,humidity,wind_speed,icon),status
-	condition,temp,precipitation,status = Weather.getWeatherFromZip(postal)
+	condition,temp,precipitation,status = Weather.getWeatherFromZip(location)
 	if status != None:
 		##Send error message, do whatever, Idk
 		print(status)
 		exit(0)
+
 	return condition,temp,precipitation,status
 
 
@@ -68,6 +70,7 @@ def set_background(temptuple,precipitation):
 	bg = pygame.transform.scale(bg,(window_width,window_height))
 	bg_rect = bg.get_rect()
 	window.blit(bg,bg_rect)
+
 	pygame.display.update()
 
 def show_weather(condition,temp,precipitation,status):
@@ -93,13 +96,15 @@ def show_weather(condition,temp,precipitation,status):
 	##weather icon
 	image = pygame.transform.scale2x(pygame.image.load(precipitation[5]))
 	window.blit(image,(window_width/4,window_height/5))
+	objects["weather"] = [(image,(window_width/4,window_height/5))]
 
 	for message in messages:
-		font = pygame.font.Font('freesansbold.ttf',font_size)
+		font = pygame.font.Font('Ubuntu-M.ttf',font_size)
 		TextSurf, TextRect = text_objects(message, font,(255,255,255))#white)
 		TextRect.center = position#((window_width/3),(window_height/5))
 		window.blit(TextSurf, TextRect)
 		position = (position[0],position[1] + (window_height/15))
+		objects["weather"].append((TextSurf,TextRect))
 
 	pygame.display.update()
 
@@ -130,19 +135,37 @@ def show_time(time):
 	global window_width
 	font_size = int((1.50)*((window_height)**(1/2)))
 	position = ((window_width/2),(window_height*(3/4)))
-	font = pygame.font.Font('freesansbold.ttf',font_size)
+	font = pygame.font.Font('Ubuntu-L.ttf',font_size)
 	TextSurf, TextRect = text_objects(time, font,(134,38,100))
 	TextRect.center = position
 	window.blit(TextSurf, TextRect)
+	objects["time"] = [(TextSurf,TextRect)]
 	pygame.display.update()
-	Time.sleep(4)
+	#Time.sleep(4)
 	#cant use time.sleep here unless time var is renamed
+
+def update_window(): #refreshes the screen using previously stored widget objects
+	window.fill((0,0,0)) #clear to black
+	for widget in objects:
+		for item in objects[widget]:
+			window.blit(*item)
+	pygame.display.update()
 
 
 create_screen()
 condition,temp,precipitation,status = getWeather()
-set_background(temp,precipitation) #background image
 show_weather(condition,temp,precipitation,status)
-datetime,time = getTime()
+date_time,time = getTime()
 last_time = convert_time(time)
-show_time(datetime)
+show_time(date_time)
+while(True):
+	date_time,time = getTime() #gets current time
+	if compare_time(time) > .20:
+		condition,temp,precipitation,status = getWeather()
+		#set_background(temp,precipitation) #background image
+		show_weather(condition,temp,precipitation,status)
+		last_time = convert_time(time)
+
+	show_time(date_time)
+	update_window()
+	#Time.sleep(4)

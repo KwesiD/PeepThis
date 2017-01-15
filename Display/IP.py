@@ -32,7 +32,7 @@ def getLocation():
 	city = data["city"]
 	state = data["region"]
 	country = data["country"]
-
+	
 	return ip,(city,state,country,postal),status
 
 # ip,location,status = getLocation()
