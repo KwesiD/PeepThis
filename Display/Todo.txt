@@ -1,6 +1,12 @@
 To do list / planning: 
 
-Create simple display for time/date/etc, potentially using pygame
+Yelp - Handle exceptions
+Figure out how to get google calendar to return statuses
+
+
+
+
+
 
 
 

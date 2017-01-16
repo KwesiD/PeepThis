@@ -5,7 +5,8 @@ import subprocess
 import time as Time 
 import random
 import datetime
-
+import Yelp
+import Recipe
 
 window = None
 window_width = 0

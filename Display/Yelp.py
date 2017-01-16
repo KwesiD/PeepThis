@@ -13,7 +13,6 @@ def getRestaurants():
 		##Send error message, do whatever, Idk
 		print(status)
 		exit(0)
-	print(location)
 	cuisine = chooseCuisine()
 	results = client.search_by_coordinates(*location,term=cuisine).businesses
 	selection = random.choice(results)
@@ -29,5 +28,4 @@ def chooseCuisine():
 			continue
 		cuisines.append(line.strip())
 	selection = random.choice(cuisines)
-	print(selection)
 	return selection

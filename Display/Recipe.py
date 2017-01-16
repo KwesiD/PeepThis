@@ -6,18 +6,46 @@ import random
 
 
 def getRecipe():
-	response = requests.get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?limitLicense=false&number=1&tags=vegetarian",
+	title = dishtype = source = instructions = ""
+	cooking_time = preparation_time = 0
+	ingredients = []
+	request = None
+	status = None
+
+	try:
+		request = requests.get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?limitLicense=false&number=1&tags=vegetarian",
   headers={
     "X-Mashape-Key": keys.recipe_key,
     "Accept": "application/json"
   }
 )
-	response = response.json()
-	recipe = response["recipes"][0]
-	cooking_time = recipe["cookingMinutes"]
-	preparation_time = recipe["preparationMinutes"]
+	except requests.ConnectionError: ##in the event of lack of connection
+		status = "Connection Error in Recipe API"
+		recipe_info = (title,cooking_time,preparation_time,dishtype,ingredients,source,instructions)
+		return recipe_info,status
+	except requests.Timeout: #poor connection
+		status = "Recipe API Timed out"
+		recipe_info = (title,cooking_time,preparation_time,dishtype,ingredients,source,instructions)
+		return recipe_info,status
+	except: #unknown issue
+		status = "Unknown Issue with Recipe API"
+		recipe_info = (title,cooking_time,preparation_time,dishtype,ingredients,source,instructions)
+		return recipe_info,status
+
+	status_code = request.status_code #200 is good. it went through. 429 means rate limit exceeded
+	if status_code != 200: #If it didnt complete properly, then it will let us know what the code was 
+		status = "Recipe API Returned Status Code" + str(status_code)
+		recipe_info = (title,cooking_time,preparation_time,dishtype,ingredients,source,instructions)
+		return recipe_info,status
+
+	request = request.json()
+	recipe = request["recipes"][0]
+	print(recipe)
+	if "cookingMinutes" in recipe:
+		cooking_time = recipe["cookingMinutes"]
+	if "preparationMinutes" in recipe:
+		preparation_time = recipe["preparationMinutes"]
 	source = recipe["sourceUrl"]
-	ingredients = []
 	for ingredient in recipe["extendedIngredients"]:
 		ingredients.append(ingredient["originalString"])
 	title = recipe["title"]
@@ -25,7 +53,8 @@ def getRecipe():
 	instructions = recipe["instructions"]
 
 	recipe_info = (title,cooking_time,preparation_time,dishtype,ingredients,source,instructions)
-	return recipe_info
+	return recipe_info,status
+
 
 # 	response = requests.get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?"
 # 		+"fillIngredients=false&ingredients="+ ingredients + "&limitLicense=false&number=5&ranking=1",
