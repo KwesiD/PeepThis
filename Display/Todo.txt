@@ -2,6 +2,8 @@ To do list / planning:
 
 Yelp - Handle exceptions
 Figure out how to get google calendar to return statuses
+Document
+#Try calculating widget position from font size*numchar then subtract half (starting from center) from screen width
 
 
 
@@ -19,3 +21,8 @@ Screen res pulled from here : http://stackoverflow.com/questions/3597965/getting
 Ubuntu fonts: fonts.ubuntu.com
 Yelp api: https://github.com/Yelp/yelp-python   (you may need sudo) pip3 install yelp
 Recipies: https://market.mashape.com/spoonacular/recipe-food-nutrition#find-by-ingredients
+Twilio: https://www.twilio.com/docs/libraries/python
+
+
+keys must have keys for all api's
+user info must have phone number

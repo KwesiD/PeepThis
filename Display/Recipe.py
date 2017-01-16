@@ -40,7 +40,7 @@ def getRecipe():
 
 	request = request.json()
 	recipe = request["recipes"][0]
-	print(recipe)
+	#print(recipe)
 	if "cookingMinutes" in recipe:
 		cooking_time = recipe["cookingMinutes"]
 	if "preparationMinutes" in recipe:
@@ -49,7 +49,8 @@ def getRecipe():
 	for ingredient in recipe["extendedIngredients"]:
 		ingredients.append(ingredient["originalString"])
 	title = recipe["title"]
-	dishtype = recipe["dishTypes"][0]
+	if recipe["dishTypes"] != []:
+		dishtype = recipe["dishTypes"][0]
 	instructions = recipe["instructions"]
 
 	recipe_info = (title,cooking_time,preparation_time,dishtype,ingredients,source,instructions)

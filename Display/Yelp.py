@@ -5,7 +5,7 @@ import IP
 import random
 
 
-def getRestaurants():
+def getRestaurant():
 	auth = Oauth1Authenticator(**keys.yelp_keys)
 	client = Client(auth)
 	location,status = IP.getLatLong() #returns ip,(city,state,country,postal),status
@@ -16,7 +16,7 @@ def getRestaurants():
 	cuisine = chooseCuisine()
 	results = client.search_by_coordinates(*location,term=cuisine).businesses
 	selection = random.choice(results)
-	return selection
+	return selection,status
 	#print(client.search_by_coordinates(*location,**terms).businesses[0].name)#.location.display_address)
 
 

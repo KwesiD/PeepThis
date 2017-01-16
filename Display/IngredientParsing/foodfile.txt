@@ -1,0 +1,265 @@
+category,subcategory,name,price,description
+appetizers,soups,miso soup,3,
+,,*hot and sour soup,5,
+,,crystal wonton soup,6,
+,,*tom yum kung - hot and sour prawn,6,
+,,winter melon soup,6,
+,,hamaguri soup,6,
+,,seafood legends soup,14,made for two
+
+,salads,house green salad,3,
+,,hiyashi wakame - seaweed salad ,6,
+,,thai style grilled chicken salad,10,
+,,spicy grilled beef salad,10,
+,,green papaya salad shrimp,11,
+,,seared tuna salad,12,
+,,white swan,12,
+
+,appetizers,edamame,5,
+,,spring rolls,5,
+,,buddha rolls (vegetarian),5,
+,,beef or chicken satay,7,
+,,chicken soon,9,diced white meat chicken w. brown sauce wrapped in lettuce
+,,steamed dumplings,6,
+,,lobster dumplings,10,
+,,shrimp tempura,8,
+,,crackling calamari,10,
+,,soft shell crab tempura,12,
+,,shanghai eggplant,8,
+,,beef negimaki,9,
+,,age tofu,6,
+,,bbq squid,11,
+,,hamachi kama yaki,12,
+,,"peacock ""razor clams""",16,
+,,asari sakamushi,12,
+,,ginger string beans,6,
+,,kim chi,6,
+,,sesame noodles,6,savory or spicy
+
+,sushi bar appetizers,sushi legends style,12,
+,,sashimi legends style,18,
+,,tartare trio,15,
+,,hot oil carpaccio,15,
+,,kobe beef carpaccio,20,
+,,spicy tuna tartar,12,
+,,fresh kumamoto oysters,3 ea.,
+,,spicy peppered tuna tataki,12,
+,,yellowtail jalapeno,12,
+,,sushi sampler,15,assortment of daily chef specials
+
+,sides,sauteed dried string beans,9,
+,,seasonal asian vegetables,10,
+,,chinese baby eggplants in garlic sauce,9,
+,,drunken shiitake mushrooms,10,
+,,sauteed baby bok choy,12,
+,,fried rice,10,"chicken, beef, shrimp, vegetable or pork"
+,,stir-fried japanese udon noodles,10,"chicken, beef, shrimp, vegetable or pork"
+,,*pad thai,10,"chicken, beef, shrimp, vegetable or pork"
+,,lo mein,10,"chicken, beef, shrimp, vegetable or pork"
+
+entrees,entrees,*heavenly chicken,18,white meat chicken in a classic chinese brown sauce
+,,**chicken blossom,18,white meat chicken finished in a thai bird chili sauce
+,,***thai curry,"(red,yellow green curry)","vegetable - 16, chicken - 18, shrimp - 24"
+,,gung po shrimp,26,
+,,*jumbo crispy prawns,26,spicy garlic sauce
+,,scallop medallions,26,
+,,legends duo,28,filet and scallops served in a brown butter sauce with seasoned vegetables
+,,*grilled rack of lamb,30,finished with a green peppercorn glaze
+,,gold coin filet,30,center-cut filet mignon with peppercorn sauce and seasoned vegetables
+,,**volcano steak,25,fiery sliced N.Y. strip steak seasoned with a chinese spiced chili rub
+,,grilled ribeye steak,40,100% certified angus beef (20 oz. bone in)
+,,chilean seabass,38,broiled Chilean seabass w. watercress and lobster dumplings
+,,crispy whole fish,38,
+,,shogun flounder,40,"whole founder filet lightly fried, with chinese spices and jalapenos, served in a flounder basket"
+,,peking duck,48,our famous chinese classic
+
+,sashimi or ngiri,tuna,6.5,
+,,salmon,6.5,
+,,yellowtail,6.5,
+,,white tuna,6,
+,,shrimp,5.5,
+,,smoked salmon,6.5
+,,sweet shrimp,6.5
+,,eel,6
+,,squid,5.5
+,,fluke,6
+,,mackerel,5.5
+,,spanish mackerel,5.5
+,,crab stick,5.5
+,,salmon roe,6.5
+,,tobiko,6
+,,tamago,4
+,,scallop,6
+,,inari,4
+,,surf clam,5.5
+,,giant clam,s.p.
+,,sea urchin roe,s.p.
+,,oo-toro,s.p.
+
+,rolls,california roll,6
+,,cucumber roll,4
+,,tuna roll,6.5
+,,yellowtail roll,6.5
+,,eel roll,6.5
+,,spicy tuna roll,7
+,,spicy salmon roll,7
+,,dynamite roll,11
+,,philadelphia roll,7
+,,spicy yellowtail roll,7.5
+,,calamari roll,7.5
+,,salmon skin roll,6
+,,green green roll,6
+,,avocado roll,4.5
+,,crab roll,4.5,
+,,sweet potato roll,5,
+,,boston roll,7,
+,,futo maki,6,
+,,spider roll,12,
+
+sushi,sushi entrees,sashimi or sushi,25/50/100,
+,,sashimi/sushi combo,30/60/110,
+
+,specialty rolls,american dream roll,13,"shrimp tempura, caviar, cucumber & avocado"
+,,white hot,13,"spicy snowcrab, avocado, fluke tempura, eel sauce & jalapeno"
+,,out of control roll,13,"spicy salmon, cucumber; topped w. tuna, yellowtail, salmon, spicy mayo & crunch"
+,,pa-pa dragon roll,13,"eel, avocado & honey walnuts; topped with avocado & sweet soy"
+,,ma-ma dragon roll,13,spicy tuna & seaweed salad; topped w. avocado & spicy lemon sauce
+,,baby dragon roll,13,shrimp tempura & lobster meat; topped with avocado & eel sauce
+,,legends roll,13,"eel, salmon, avocado, masago, crab meat; fried to a crisp"
+,,flaming heart,12,"salmon, tuna, crabstick, caviar, avocado & spicy tuna wrapped w. soybean nori"
+,,rainbow roll,12,assorted fish in collage of colors
+,,two thumbs up roll,14,"soft-shell crab, shrimp tempura, spicy lobster meat, caviar, avocado & cucumber wrapped in soybean nori"
+,,shogun special roll,15,"soft-shell crab, cucumber; topped w. avocado & eel"
+,,banzai roll,13,"shrimp tempura; topped w. salmon sashimi, spicy mayo & sweet soy"
+,,red lobster roll,13,"spicy lobster meat & cucumber; topped w. tuna sashimi, spicy mayo & crunch"
+,,vegetarian roll,12,"cucumber, avocado, tofu & honey walnuts; wrapped in soybean nori"
+
+hibachi,mains,vegetables,16,seasonal vegetables and tofu
+,,pork loin,19,center-cut pork tenderloin
+,,halibut,30,seared to perfection
+,,shrimp,25,grilled succulent shellfish
+,,filet mignon,30,100% prime tenderloin
+,,ribeye steak,40,100% certified angus beef
+,,chicken,20,fresh chicken breast hibachi grilled
+,,salmon,21,fresh salmon steaks hibachi-grilled with lemons
+,,chilean sea bass,38,
+,,duck breast,30,
+,,mahi mahi,30,
+,,steak,25,10 oz. new york strip
+,,scallop,27,tender ocean scallops hibachi style
+,,lobster,36,twin lobster tails
+
+,combos,chicken & shrimp,25,
+,,chicken & scallop,26,
+,,chicken & steak,26,
+,,chicken & lobster,30,
+,,steak & scallop,29,
+,,steak & shrimp,29,
+,,steak & lobster,32,
+,,filet mignon & chicken,30,
+,,filet mignon & shrimp,32,
+,,filet mignon & scallop,32,
+,,filet mignon & lobster,36,
+,,shrimp & scallop,28,
+,,seafood deluxe,38,"lobster tail, shrimp and scallops"
+
+,hibachi sides,lobster tail,16,
+,,sirloin steak,11,
+,,shrimp,11,
+,,chicken,8,
+,,sword fish,10,
+,,filet mignon,14,
+,,scallop,12,
+,,salmon,9,
+,,pork loin,8,
+,,"onion, zucchini, & mushroom",6,
+,,noodles or rice,5,
+
+,childrens,hibachi chicken,13
+,,hibachi steak,14
+,,hibachi shrimp,14
+,,hibachi salmon,14
+
+drinks,exotic,mai tai,6.5
+,,chi chi,6.5
+,,pina colada,6.5
+,,zombie,6.5
+,,blue hawaii,6.5
+,,scorpion,6.5
+,,house special,6.5
+,,love potion,6.5
+,,bali coco,6.5
+,,hawaiian love bowl,16
+
+,specialty drinks,samurai,6.5
+,,shogun,6.5
+,,katana,6.5
+,,tokyo peach cocktail,8
+,,shogun iced tea,8
+,,midori margarita,8
+,,martinis,10
+,,shiso-jito,10
+,,sakitini,10
+,,cosmopolitan,10
+,,tokyopolitan,10
+,,apple pomegranate,10
+,,asian pearsuasion,10
+,,lychee,10
+,,ginger drop,10
+
+,beer,sapporo,5
+,,heineken,5
+,,heineken light,5
+,,corona,5
+,,budweiser,3.5
+,,coors light,3.5
+,,miller lite,3.5
+,,yuengling,3.5
+,,amstel light,4
+,,kirin ichiban,5
+,,stella artois,5
+,,sierra nevada,5
+
+,beverages,,
+,,soda,
+,,virgin pina colada,3.5
+,,virgin strawberry daiquiri,3.5
+,,saritoga (sparkling 1 liter),5
+
+,cognac,remy martin vsop,10
+,,remy martin xo excellence,23
+,,hennessey vs,8
+,,hennessey xo,25
+
+,port wines,taylor flagdate special ruby,7
+,,fonseca bin 27,8
+,,fonseca 10 yr.,12
+,,taylor flagdate 20 yr. tawny,16
+,,"fonseca ""vintage 97""",25
+
+,single-malt scotch,"talisker ""10"" skye",12
+,,"glenfidditch ""12""",9,
+,,"the glenlivet ""12""",10,
+,,"the macallan ""12""",12,
+,,"oban ""14"" west highlands",17,
+,,"dalwhinnie ""15"" speyside",13,
+,,"lagavulin ""16"" islay",18,
+,,"the macallan ""18""",28,
+,,johnnie walker blue label,40,
+desserts,coffee and tea,green tea,2,
+,,coffee,2.5,
+,,espresso,3.5,
+,,cappuccino,5,
+,,jasmine blossom tea,8,
+,desserts,exotic,7,"mango mousse puree, coconut ladyfingers, passionfruit glaze"
+,,vanilla bourbon,7,"tahitian vanilla bourbon mousse, layered almond sponge cake"
+,,marquise,7,"bitter-sweet chocolate mousse cake, soaked in kirsch syrup, chocolate mirror glaze"
+,,lemon tart,7,
+,,tiramisu,7,
+,,banana bonzai roll,9,
+,,tartuffe,10,
+,,banana tempura,6,
+,,ice cream tempura (vanilla or chocolate),6,
+,,japanese mochi ice cream,6,"mango, vanilla, green tea, red bean"
+,,fresh pineapple,6,
+,,ice cream,3.5,"vanilla, chocolate, pistachio, strawberry, green tea, red bean, orange sherbert"

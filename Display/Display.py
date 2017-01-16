@@ -7,11 +7,14 @@ import random
 import datetime
 import Yelp
 import Recipe
+import Assistant
 
 window = None
 window_width = 0
 window_height = 0
-last_time = 0
+last_time_weather = 0
+last_time_recipe = 0
+last_time_restaurant = 0
 objects = {} #this dictionary stores all the objects from all of the widgets and their positions
 
 def getWeather():
@@ -47,7 +50,7 @@ def create_screen():
 	window = pygame.display.set_mode((window_width,window_height))
 
 def text_objects(text,font,color):
-    textSurface = font.render(text, True,color)
+    textSurface = font.render(str(text), True,color)
     return textSurface, textSurface.get_rect()
 
 def set_background(temptuple,precipitation):
@@ -123,11 +126,10 @@ def convert_time(prev): #converts time to 24hr
 		hour += 12
 	return str(hour)+":"+str(minutes)
 
-def compare_time(now): #this should take in temp as an agrument
-	global last_time
+def compare_time(last,now): 
 	now = convert_time(now)
-	hours = (int(now.split(":")[0])-int(last_time.split(":")[0]))%24 #subtracts time and takes modulus
-	minutes = ((int(now.split(":")[1])-int(last_time.split(":")[1]))%60)/60
+	hours = (int(now.split(":")[0])-int(last.split(":")[0]))%24 #subtracts time and takes modulus
+	minutes = ((int(now.split(":")[1])-int(last.split(":")[1]))%60)/60
 	hours += minutes
 	return hours
 
@@ -137,13 +139,49 @@ def show_time(time):
 	font_size = int((1.50)*((window_height)**(1/2)))
 	position = ((window_width/2),(window_height*(3/4)))
 	font = pygame.font.Font('Ubuntu-L.ttf',font_size)
-	TextSurf, TextRect = text_objects(time, font,(134,38,100))
+	TextSurf, TextRect = text_objects(time, font,(255,255,255))
 	TextRect.center = position
 	window.blit(TextSurf, TextRect)
 	objects["time"] = [(TextSurf,TextRect)]
 	pygame.display.update()
 	#Time.sleep(4)
 	#cant use time.sleep here unless time var is renamed
+
+def show_recipe():
+	recipe_response = Assistant.getRecipe()
+	font_size = int((.75)*((window_height)**(1/2)))
+	position = ((window_width*(4/6)),(window_height*(1/5)))
+	objects["recipe"] = []
+	empty = [None,"",0]
+	for line in recipe_response:
+		if line in empty:
+			continue
+		font = pygame.font.Font('Ubuntu-L.ttf',font_size)
+		TextSurf, TextRect = text_objects(line, font,(255,255,255))#white)
+		TextRect.center = position#((window_width/3),(window_height/5))
+		window.blit(TextSurf, TextRect)
+		position = (position[0],position[1] + (window_height/15))
+		objects["recipe"].append((TextSurf,TextRect))
+
+	pygame.display.update()
+
+def show_restaurant():
+	restaurant_response = Assistant.getRestaurant()
+	font_size = int((.75)*((window_height)**(1/2)))
+	position = ((window_width*(4/6)),(window_height*(2.5/5)))
+	objects["restaurant"] = []
+	empty = [None,"",0]
+	for line in restaurant_response:
+		if line in empty:
+			continue
+		font = pygame.font.Font('Ubuntu-L.ttf',font_size)
+		TextSurf, TextRect = text_objects(line, font,(255,255,255))#white)
+		TextRect.center = position#((window_width/3),(window_height/5))
+		window.blit(TextSurf, TextRect)
+		position = (position[0],position[1] + (window_height/15))
+		objects["restaurant"].append((TextSurf,TextRect))
+
+	pygame.display.update()
 
 def update_window(): #refreshes the screen using previously stored widget objects
 	window.fill((0,0,0)) #clear to black
@@ -157,15 +195,27 @@ create_screen()
 condition,temp,precipitation,status = getWeather()
 show_weather(condition,temp,precipitation,status)
 date_time,time = getTime()
-last_time = convert_time(time)
+last_time_weather = last_time_restaurant = last_time_recipe = convert_time(time)
 show_time(date_time)
+show_recipe()
+show_restaurant()
 while(True):
 	date_time,time = getTime() #gets current time
-	if compare_time(time) > .20:
+
+	##weather check
+	if compare_time(last_time_weather,time) >= .20:
 		condition,temp,precipitation,status = getWeather()
-		#set_background(temp,precipitation) #background image
 		show_weather(condition,temp,precipitation,status)
-		last_time = convert_time(time)
+		last_time_weather = convert_time(time)
+
+	if compare_time(last_time_recipe,time) >= 12:
+		show_recipe()
+		last_time_recipe = convert_time(time)
+
+	if compare_time(last_time_restaurant,time) >= 12:
+		show_restaurant()
+		last_time_restaurant = convert_time(time)
+
 
 	show_time(date_time)
 	update_window()
